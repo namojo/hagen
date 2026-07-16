@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# hagen PR-only 훅 (strict) — 보호 브랜치로의 직접 push를 차단한다.
+PROTECTED='^(main|master|release/.*)$'
+while read -r local_ref local_sha remote_ref remote_sha; do
+  BRANCH=$(echo "$remote_ref" | sed 's|refs/heads/||')
+  if echo "$BRANCH" | grep -qE "$PROTECTED"; then
+    echo "✖ hagen: '$BRANCH' 직접 push 차단 — 모든 변경은 PR을 경유한다. (strict 프로파일)"
+    echo "  브랜치를 만들어 push하고 PR을 열어라: git checkout -b feat/작업명"
+    exit 1
+  fi
+done
+exit 0

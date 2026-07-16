@@ -1,0 +1,19 @@
+{
+  "name": "hagen",
+  "displayName": "Hagen — 거버넌스 내장 하네스 팩토리 (harness + agent)",
+  "version": "0.2.1",
+  "description": "One trigger, governed team. 도메인 문장 하나로 에이전트 팀을 생성하고, 그 자리에서 거버넌스(게이트·감사·롤백)까지 자동 장착하는 통합 하네스 팩토리. '하네스 구성해줘' 또는 'build a harness'로 트리거.",
+  "author": {
+    "name": "hagen contributors"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "harness",
+    "harness-engineering",
+    "agent-teams",
+    "governance",
+    "meta-skill",
+    "claude-code-plugin"
+  ],
+  "hooks": "./hooks/hooks.json"
+}

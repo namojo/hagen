@@ -1,0 +1,11 @@
+{
+  "name": "hagen",
+  "version": "0.2.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "inject": "bun scripts/inject-governance.ts",
+    "validate": "bun scripts/validate.ts",
+    "test": "bun tests/assert-harness.ts"
+  }
+}

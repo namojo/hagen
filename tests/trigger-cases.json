@@ -1,0 +1,27 @@
+{
+  "description": "hagen-harness 메타 스킬의 트리거 정확성 테스트. Claude Code에 플러그인 설치 후 각 쿼리를 입력해 스킬 발화 여부를 기록한다. near-miss는 키워드가 유사하지만 다른 도구가 맞는 경계 케이스만 수록 (명백히 무관한 쿼리는 테스트 가치 없음).",
+  "should_trigger": [
+    {"q": "하네스 구성해줘", "why": "명시 트리거 문구"},
+    {"q": "이 프로젝트에 맞는 에이전트 팀을 설계해줘", "why": "팀 설계 요청"},
+    {"q": "build a harness for customer support automation", "why": "영문 트리거"},
+    {"q": "유튜브 채널 운영을 자동화하는 에이전트들을 만들어줘", "why": "도메인 자동화 체계 구축"},
+    {"q": "우리 팀 하네스에 거버넌스 게이트 좀 추가해줘", "why": "기존 하네스에 거버넌스 추가"},
+    {"q": "리서치부터 보고서 작성까지 서로 검토하는 팀이 필요해", "why": "암시적 팀 구성 요청"},
+    {"q": "하네스 프로파일을 strict로 올려줘", "why": "거버넌스 관리 요청"},
+    {"q": "set up an agent team with review gates", "why": "영문 + 거버넌스"},
+    {"q": "이 도메인용 오케스트레이터랑 스페셜리스트 짜줘", "why": "구성요소 용어로 요청"},
+    {"q": "웹툰 제작 파이프라인을 에이전트로 구성하고 싶어", "why": "파이프라인 구축"}
+  ],
+  "should_not_trigger": [
+    {"q": "하네스가 뭐야? 개념 설명해줘", "expect": "개념 설명 — 일반 답변", "risk": "high"},
+    {"q": "하네스 엔지니어링이랑 컨텍스트 엔지니어링 차이가 뭐야", "expect": "개념 비교 — 일반 답변", "risk": "high"},
+    {"q": "reviewer 에이전트 하나만 말투 고쳐줘", "expect": "단일 파일 편집", "risk": "high"},
+    {"q": "이 SKILL.md에 오타 있는지 봐줘", "expect": "단순 검토", "risk": "medium"},
+    {"q": "revfactory/harness 저장소 분석해줘", "expect": "저장소 분석 — 웹 리서치", "risk": "medium"},
+    {"q": "에이전트가 파일을 못 읽는 버그 좀 봐줘", "expect": "디버깅", "risk": "low"},
+    {"q": "이 파이썬 스크립트에 로깅 추가해줘", "expect": "단순 코드 작성", "risk": "low"},
+    {"q": "safety harness 안전벨트 규격 알려줘", "expect": "동음이의어", "risk": "low"},
+    {"q": "지금 있는 하네스 구조를 다이어그램으로 그려줘", "expect": "시각화 요청", "risk": "medium"},
+    {"q": "테스트 하네스(pytest fixture) 짜줘", "expect": "SW 테스트 하네스 — 코드 작성", "risk": "high"}
+  ]
+}

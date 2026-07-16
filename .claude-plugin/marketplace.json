@@ -1,0 +1,13 @@
+{
+  "name": "hagen",
+  "owner": {
+    "name": "namojo"
+  },
+  "plugins": [
+    {
+      "name": "hagen",
+      "source": "./",
+      "description": "거버넌스 내장 하네스 팩토리 — 도메인 한 문장으로 에이전트 팀 + 스킬 + 거버넌스(헌법·게이트·감사)를 한 번에 생성 (harness + agent)"
+    }
+  ]
+}
